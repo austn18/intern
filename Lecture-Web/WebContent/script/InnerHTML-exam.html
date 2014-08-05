@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<script>
+	function countIncrease(){
+		var spanObj = document.getElementById("countSpan"); // 아이디값을 가져옴
+		spanObj.innerHTML = parseInt(spanObj.innerHTML) + 1; //innerHTML 로 내부값 가져옴
+	}
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<span id="countSpan">0</span>번 클릭 <input type="button" value="클릭" onclick="countIncrease()" />
+</body>
+</html>

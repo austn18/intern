@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<script>
+	function selectAll(){
+		//checkbox 배열로 인식(동적) - length
+		var length = document.inputForm.hobby.length;
+		for(var i = 0; i < length ; i++){
+			document.inputForm.hobby[i].checked = true;
+		}
+				
+	}
+	function deselectAll(){
+		var length = document.inputForm.hobby.length;
+		for(var i = 0; i < length ; i++){
+			document.inputForm.hobby[i].checked = false;
+		}
+	}
+	
+	function toggle(check){
+		var f = document.inputForm;
+		//checkbox 배열로 인식(동적) - length
+		var length = document.inputForm.hobby.length;
+		for(var i = 0; i < length ; i++){
+			f.hobby[i].checked = check;
+		}
+				
+	}
+	function showInfo(){
+		var total = '';
+		var count = 0;
+		var length = document.inputForm.hobby.length;
+		for(var i = 0; i < length ; i++){
+			if(document.inputForm.hobby[i].checked){
+				total += document.inputForm.hobby[i].value +'\n';
+				count++;
+			}
+		}
+		if(count == 0)alert('선택된 정보가 없습니다.');
+		else alert(total);
+	}
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="inputForm" action="process.jsp">
+	당신의 취미는?<br/>
+	<input type="checkbox" name="hobby" value="movic">영화감상 <br/>
+	<input type="checkbox" name="hobby" value="music">음악감상 <br/>
+	<input type="checkbox" name="hobby" value="reading">독서 <br/>
+	<input type="checkbox" name="hobby" value="game">게임 <br/>
+	
+	<input type="button" value="전체선택" onclick="selectAll()">
+	<input type="button" value="전체해제" onclick="deselectAll()">
+		<input type="button" value="전체선택" onclick="toggle(true)">
+	<input type="button" value="전체해제" onclick="toggle(false)">
+	<input type="button" value="선택정보보기" onclick="showInfo()">
+	</form>
+</body>
+</html>

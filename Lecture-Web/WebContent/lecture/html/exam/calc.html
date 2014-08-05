@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<script>
+	var check = 0;
+	var check2 = true;
+	var fir = 0;
+	var sec = 0;
+	
+	function Insert(v){
+		var text = document.getElementById("text");
+		if(text.value == 0 || check2){
+			text.value = v;
+			check2 = false;
+		}else if (v == 10){
+			text.value = text.value + '.';
+		}else{
+			text.value = text.value + v;
+		}
+	}
+	function math(m){
+		check2 = true;
+		check = m;
+		var text = document.getElementById("text");
+		fir = parseFloat(text.value);
+	}
+	function end(){
+		var text = document.getElementById("text");
+		sec = parseFloat(text.value);
+		var total;
+		check2 = true;
+		
+		switch(check){
+		case 1:
+			total = fir + sec;
+			break;
+		case 2:
+			total = fir - sec;
+			break;
+		case 3:
+			total = fir * sec;
+			break;
+		case 4:
+			total = fir / sec;
+			break;
+		case 5:
+			total = fir % sec;
+			break;
+		}
+
+		text.value = total;
+		
+	}
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="" method="get">
+		<table border="1">
+			<tr>
+				<td colspan="4">
+				<input type="text" name="id" size="15" value="0" id="text"/>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="button" value="7" onclick="Insert(7)"/></td>
+				<td><input type="button" value="8" onclick="Insert(8)"/></td>
+				<td><input type="button" value="9" onclick="Insert(9)"/></td>
+				<td><input type="button" value="/" onclick="math(4)" style="width:100%"/></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="4"  onclick="Insert(4)"/></td>
+				<td><input type="button" value="5"  onclick="Insert(5)"/></td>
+				<td><input type="button" value="6"  onclick="Insert(6)"/></td>
+				<td><input type="button" value="*"  onclick="math(3)" style="width:100%"/></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="1"  onclick="Insert(1)"/></td>
+				<td><input type="button" value="2"  onclick="Insert(2)"/></td>
+				<td><input type="button" value="3"  onclick="Insert(3)"/></td>
+				<td><input type="button" value="-"  onclick="math(2)" style="width:100%"/></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="0"  onclick="Insert(0)"/></td>
+				<td><input type="button" value="." onclick="Insert(10)"/></td>
+				<td><input type="button" value="+"  onclick="math(1)" /></td>
+				<td><input type="button" value="%"  onclick="math(5)" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="button" value="="/ style="width:100%" onclick="end()"></td>
+				<td colspan="2"><input type="reset" value=" Clear " /></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

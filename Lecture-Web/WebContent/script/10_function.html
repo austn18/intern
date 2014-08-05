@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<script>
+	//함수 선언
+	function sum(var1, var2){//무조건 var 형이기때문에 변수만 들어감
+		return var1+var2;
+	} 
+	function returnTest(){ //리턴값이 없는 함수
+		alert('문장A');
+		return;
+	}
+	function returnTest2(var1){
+		alert(var1);
+		return;
+	}
+	function getArea(var1){
+		return 3.14*var1*var1;
+	}
+	var s = sum(100,200);
+	alert(s);
+	returnTest();
+	returnTest2('A');
+	returnTest2(10);
+	returnTest2(3.14);
+	returnTest2("asdsarawre");
+	
+	var radius = 10;
+	var area = getArea(radius);
+	alert(area);
+	
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<script>
+//해당 내용의 모든 내용이 로드될때 호출
+	window.onload = function(){
+		alert('Hello!');
+	}//스트리밍시 데이터 로드시?
+
+	function autoCall(){
+		alert('Hello!!');
+	}//스트리밍시 종료후
+	
+	//2가지방식 - 바디에 온로드를 사용, window.onload메소드 이용
+	//			 window 방식을 주로 사용
+</script>
+<title>Insert title here</title>
+</head>
+<body onload="autoCall()">
+	<h1>Hello Window...</h1>
+	<h1>Hello Window...</h1>
+</body>
+</html>

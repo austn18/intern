@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<script type="text/javascript">
+	function chkForm(){
+		var f = document.wForm;
+		if(f.title.value == "") {
+			alert('제목을 입력하세요');
+			f.title.focus(); //커서를 제목으로 옮겨준다
+			return false;
+		}else if(f.writer.value == "") {
+			alert('글쓴이를 입력하세요');
+			f.writer.focus(); 
+			return false;
+		}else if(f.contents.value == "") {
+			alert('내용을 입력하세요');
+			f.contents.focus(); 
+			return false;
+		}
+		return true;
+	}
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+<hr width="70%">
+		<h2>게시물 등록</h2>
+		<hr width="70%">
+		<br/>
+		<!--
+			-method get  명시하지 않으면 get방식으로 설정
+						 form을 제외한 모든방식(<a>)
+						 url에 입력한 정보가 보임
+					post url에 입력한 정보가 안보임
+						   내용, 패스워드 넘길때는 반드시 post 방식 사용
+						 한글을 위한 encoding/decoding 지원 
+		-->
+		<form method="post" name="wForm" action="/Lecture-Web/method" onsubmit="return chkForm()">
+			<table width="70%" border="1">
+				<tr>
+					<th>제목</th>
+					<td align="left"><input type="text" name="title" size="40"></td>
+				</tr>
+				<tr>
+					<th>글쓴이</th>
+					<td align="left"><input type="text" name="writer" size="40"></td>
+				</tr>
+				<tr>
+					<th>내용부</th>
+					<td align="left"><textarea name="contents" rows="6" cols="40"></textarea></td>
+				</tr>
+			</table>
+			<br/>
+			<input type="submit" value="  등 록  ">
+		</form>
+	</div>
+</body>
+</html>

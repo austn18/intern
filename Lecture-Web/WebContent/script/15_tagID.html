@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<script>
+//태그별로 아이디 지정하여 해당 부분만 값을 바꾼다?
+	window.onload = function(){
+		var header1 = document.getElementById("header1");//지정한 id 값을 가진 테그의 내용을 가져옴
+		var header2 = document.getElementById("header2");
+		
+		//테그 내부의 값을 바꿈
+		header1.innerHTML = 'with getElementByID()';
+		
+		alert(header1);
+	};
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<h1 id="header1">Hearder</h1>
+	<h1 id="header1">Hearder</h1>
+	
+</body>
+</html>

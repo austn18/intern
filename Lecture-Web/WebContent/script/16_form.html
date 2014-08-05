@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<script>
+	function whenSubmit(){
+		if(document.my_form.pass.value != document.my_form.pass_check.value){
+			alert('비밀번호가 맞지 않습니다.');
+			document.my_form.pass.value = '';
+			document.my_form.pass_check.value = '';
+			return false;
+		}else return true;
+	}
+
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="my_form" action="/Lecture-Web/jsp/Login.jsp"
+			onsubmit="return whenSubmit()">
+		이름 <input type="text" name="name" id="name"/><br/>
+		비밀번호 <input type="password" name="pass" id="pass"/><br/>
+		비밀번호 확인 <input type="password" name="pass_check" id="pass_check"/><br/>
+		<input type="submit" value="제출">
+	</form>
+</body>
+</html>

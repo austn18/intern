@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<script>
+	//eval() 함수에 사용할 문자열 선언
+	var willEval = '';
+	willEval += 'var number = 10;';
+	willEval += 'alert(number);';
+	willEval += 'var arrs = ["1", "2"];';
+	willEval += 'alert("배열이 선언되었습니다.")';
+
+	eval(willEval); // 내용이 자바스크립트 내용이라면 스크립트로 인식하도록 함
+	//짱많이씀	
+	alert(willEval);
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>
