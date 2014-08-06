@@ -2,11 +2,11 @@ apply plugin: 'java'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'war'
 
-/*
+
 compileJava {
 	options.encoding = 'MS949'
 }
-*/
+
 
 eclipse {
   wtp {
