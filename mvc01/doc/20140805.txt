@@ -1,0 +1,12 @@
+*Gradle 프로젝트 폴더 구조
+/src/main : 애플리케이션 소스 폴더
+/src/main/java : 자바 소스 폴더
+/src/main/resources : 애플리케이션에서 사용하는 참조 파일(xml, properties etc.)
+
+/src/test : 애플리케이션 단위 테스트 소스 폴더
+/src/test/java : 자바 단위 테스트 소스 파일
+/src/test/resources : 단위테스트할 때 사용할 참조 파일(xml, properties etc)
+
+* Gradle 설정 파일
+- build.gradle
+1) 
