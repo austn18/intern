@@ -35,7 +35,7 @@
 				</c:when>
 				<c:otherwise>
 					마이페이지 ||
-					<a href="${contextRoot}/jsp/login/logout.jsp">로그아웃</a>
+					<a href="${contextRoot}/auth/logout">로그아웃</a>
 				</c:otherwise>
 			</c:choose>
 		</td>

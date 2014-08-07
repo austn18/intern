@@ -52,7 +52,7 @@
 </head>
 <body>
 	<div id="header">
-		<jsp:include page="/jsp/include/topMenu.jsp" />
+		<jsp:include page="/view/include/topMenu.jsp" />
 	</div>
 	<div id="content" align="center">
 		<hr width="80%" />
@@ -80,7 +80,7 @@
 		</form>
 	</div>
 	<div id="bottom">
-		<%@ include file="/jsp/include/bottom.jsp" %>
+		<%@ include file="/view/include/bottom.jsp" %>
 	</div>
 
 </body>
