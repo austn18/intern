@@ -8,8 +8,8 @@
 <table border="1" width="100%">
 	<tr>
 		<td rowspan="2" style="width: 204px; height: 33px;">
-			<a href="<%=application.getContextPath() %>/index.jsp">
-				<img src="<%=application.getContextPath() %>/images/bit_logo.gif" style="border: 0px;"/>
+			<a href="${contextRoot}/index.jsp">
+				<img src="${contextRoot}/images/bit_logo.gif" style="border: 0px;"/>
 			</a>
 		</td>
 		<td align="right">
@@ -27,15 +27,15 @@
 			<c:if test="${ userVO.type eq 'S' }">
 			회원관리 ||
 			</c:if>
-			<a href="<%=application.getContextPath() %>/board/list">게시판</a> ||
+			<a href="${contextRoot}/board/list">게시판</a> ||
 			<c:choose>
 				<c:when test="${empty userVO}">
 					회원가입 ||
-					<a href="<%=application.getContextPath() %>/auth/login">로그인</a> ||
+					<a href="${contextRoot}/auth/login">로그인</a> ||
 				</c:when>
 				<c:otherwise>
 					마이페이지 ||
-					<a href="<%=application.getContextPath() %>/jsp/login/logout.jsp">로그아웃</a>
+					<a href="${contextRoot}/auth/logout">로그아웃</a>
 				</c:otherwise>
 			</c:choose>
 		</td>

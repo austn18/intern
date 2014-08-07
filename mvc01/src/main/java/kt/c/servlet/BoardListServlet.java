@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kr.co.kt.board.db.BoardDAO;
+import kt.c.dao.BoardDAO;
 
 @WebServlet("/board/list")
 public class BoardListServlet extends HttpServlet {

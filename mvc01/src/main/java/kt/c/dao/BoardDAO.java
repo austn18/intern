@@ -1,4 +1,4 @@
-package kr.co.kt.board.db;
+package kt.c.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,8 +6,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import kr.co.kt.util.ConnectionFactory;
-import kr.co.kt.util.JDBCClose;
+import kt.c.util.ConnectionFactory;
+import kt.c.util.JDBCClose;
+import kt.c.vo.BoardFileVO;
+import kt.c.vo.BoardVO;
 
 
 public class BoardDAO {

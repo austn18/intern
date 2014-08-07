@@ -1,6 +1,4 @@
-<%@page import="kr.co.kt.board.db.BoardVO"%>
 <%@page import="java.util.List"%>
-<%@page import="kr.co.kt.board.db.BoardDAO"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -9,21 +7,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>게시판 목록(by MVC)</title>
-<link rel="stylesheet" href="/Mission-Web/css/layout.css" />
-<link rel="stylesheet" href="/Mission-Web/css/board.css" />
+<link rel="stylesheet" href="../css/layout.css" />
+<link rel="stylesheet" href="../css/board.css" />
 <script>
 	function goWriteForm() {
-		location.href = "writeForm.jsp";
+		location.href = "write";
 	}
 	
 	function doAction(boardNo) {
 		<c:choose>
 			<c:when test="${not empty userVO}">
-				location.href = "detail.jsp?type=list&no=" + boardNo;
+				location.href = "detail?type=list&no=" + boardNo;
 			</c:when>
 			<c:otherwise>
 				if(confirm("로그인 후 사용가능합니다.\n로그인 페이지로 이동하시겠습니까?"))
-					location.href = "/Mission-Web/jsp/login/login.jsp";
+					location.href = "../auth/login";
 			</c:otherwise>
 		</c:choose>
 	}
@@ -33,7 +31,7 @@
 </head>
 <body>
 	<div id="header">
-		<jsp:include page="/jsp/include/topMenu.jsp" />
+		<jsp:include page="/view/include/topMenu.jsp" />
 	</div>
 	<div id="content">
 		<div align="center">
@@ -72,7 +70,7 @@
 		</div>
 	</div>
 	<div id="bottom">
-		<%@ include file="/jsp/include/bottom.jsp"%>
+		<%@ include file="/view/include/bottom.jsp"%>
 	</div>
 
 </body>

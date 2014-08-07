@@ -1,4 +1,4 @@
-package kr.co.kt.util;
+package kt.c.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,7 +15,7 @@ public class ConnectionFactory {
 			
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-			String url = "jdbc:oracle:thin:@192.168.0.16:1521:xe";
+			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			String user = "hr";
 			String password = "hr";
 			

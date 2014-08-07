@@ -12,13 +12,13 @@
 </head>
 <body>
 	<div id="header">
-		<jsp:include page="/jsp/include/topMenu.jsp" />
+		<jsp:include page="/view/include/topMenu.jsp" />
 	</div>
 	<div id="content">
 		컨텐트 영역
 	</div>
 	<div id="bottom">
-		<%@ include file="/jsp/include/bottom.jsp" %>
+		<%@ include file="/view/include/bottom.jsp" %>
 	</div>
 </body>
 </html>

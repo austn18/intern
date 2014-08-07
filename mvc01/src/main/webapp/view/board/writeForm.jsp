@@ -1,46 +1,46 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>±Ûµî·Ï</title>
-<link rel="stylesheet" href="/Mission-Web/css/layout.css" />
-<link rel="stylesheet" href="/Mission-Web/css/board.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ê¸€ë“±ë¡</title>
+<link rel="stylesheet" href="../css/layout.css" />
+<link rel="stylesheet" href="../css/board.css" />
 <script>
 	function doList() {
-		location.href = "list.jsp";
+		location.href = "list";
 	}
 	
 	function doWrite() {
 		var f = document.wForm;
 		if(f.title.value == "") {
-			alert('Á¦¸ñÀ» ÀÔ·ÂÇÏ¼¼¿ä');
+			alert('ì œëª©ì„ ì…ë ¥í•˜ì„¸ìš”');
 			f.title.focus();
 			return false;
 		}
 // 		if(f.writer.value == "") {
-// 			alert('±Û¾´ÀÌ¸¦ ÀÔ·ÂÇÏ¼¼¿ä');
+// 			alert('ê¸€ì“´ì´ë¥¼ ì…ë ¥í•˜ì„¸ìš”');
 // 			f.writer.focus();
 // 			return false;
 // 		}
 		if(f.content.value == "") {
-			alert('³»¿ëÀ» ÀÔ·ÂÇÏ¼¼¿ä');
+			alert('ë‚´ìš©ì„ ì…ë ¥í•˜ì„¸ìš”');
 			f.content.focus();
 			return false;
 		}
 		
-		// ±İÁö ÆÄÀÏ È®ÀåÀÚ Ã¼Å©
+		// ê¸ˆì§€ íŒŒì¼ í™•ì¥ì ì²´í¬
 		var forbidName = ['exe', 'java', 'bat', 'jsp', 'js'];
 		var fileName = f.attachFile1.value;	// test.java
 		
 		if(fileName != "") {
 			var ext = fileName.substr(fileName.lastIndexOf(".") + 1);
-// 			alert('¼±ÅÃÇÑ È®ÀåÀÚ¸í : ' + ext);
+// 			alert('ì„ íƒí•œ í™•ì¥ìëª… : ' + ext);
 
 			for(var i = 0; i < forbidName.length; i++) {
 				if(forbidName[i] == ext) {
-					alert(ext + 'È®ÀåÀÚ´Â ÆÄÀÏ¾÷·Îµå Á¤Ã¥¿¡ À§¹èµË´Ï´Ù.');
+					alert(ext + 'í™•ì¥ìëŠ” íŒŒì¼ì—…ë¡œë“œ ì •ì±…ì— ìœ„ë°°ë©ë‹ˆë‹¤.');
 					return false;
 				}
 			}
@@ -53,42 +53,41 @@
 </head>
 <body>
 <div id="header">
-		<jsp:include page="/jsp/include/topMenu.jsp" />
+		<jsp:include page="/view/include/topMenu.jsp" />
 </div>
 <div id="content" align="center">
 	<hr width="80%" />
-	<h2>°Ô½ÃÆÇ µî·Ï</h2>
+	<h2>ê²Œì‹œíŒ ë“±ë¡</h2>
 	<hr width="80%" />
 	<br/>
 	
-	<form name="wForm" action="write.jsp" 
+	<form name="wForm" action="write" 
 					   method="post"
 					   enctype="multipart/form-data"
 					   onsubmit="return doWrite()">
 					   
-	<input type="hidden" name="writer" value="${userVO.id }" />
+
 	<table width="80%" border="1">
 		<tr>
-			<th width="23%">Á¦¸ñ</th>
+			<th width="23%">ì œëª©</th>
 			<td align="left">
 				<input type="text" name="title" size="40" />
 			</td>
 		</tr>
 		<tr>
-			<th>±Û¾´ÀÌ</th>
+			<th>ê¸€ì“´ì´</th>
 			<td align="left">
 				${ userVO.id }
-<%-- 				<input type="text" name="writer" value="${userVO.id }" readonly="readonly" size="40" /> --%>
 			</td>
 		</tr>
 		<tr>
-			<th>³»¿ë</th>
+			<th>ë‚´ìš©</th>
 			<td align="left">
 				<textarea name="content" rows="7" cols="40"></textarea>
 			</td>
 		</tr>
 		<tr>
-			<th>Ã·ºÎÆÄÀÏ</th>
+			<th>ì²¨ë¶€íŒŒì¼</th>
 			<td align="left">
 				<input type="file" name="attachFile1" size="40" /><br/>
 				<input type="file" name="attachFile2" size="40" />
@@ -97,15 +96,15 @@
 	</table>
 	<br/>
 	
-	<input type="submit" value="»õ±Û µî·Ï" />
-	<input type="button" value="¸ñ·ÏÀ¸·Î ÀÌµ¿" onclick="doList()"/>
+	<input type="submit" value="ìƒˆê¸€ ë“±ë¡" />
+	<input type="button" value="ëª©ë¡ìœ¼ë¡œ ì´ë™" onclick="doList()"/>
 	
 	</form>
 	
 	
 </div>
 	<div id="bottom">
-		<%@ include file="/jsp/include/bottom.jsp" %>
+		<%@ include file="/view/include/bottom.jsp" %>
 	</div>
 </body>
 </html>

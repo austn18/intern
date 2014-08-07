@@ -28,18 +28,21 @@ public class LoginServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("LoginServlet.doPost()...");
+		
 
 		LoginVO userVO = new LoginDAO().login(new LoginVO()
 							.setId(request.getParameter("id"))
 							.setPassword(request.getParameter("password")));
+		
 		if(userVO != null){
-			request.setAttribute("userVO", userVO);
+			request.getSession().setAttribute("userVO", userVO);
 			RequestDispatcher rd = request.getRequestDispatcher(
 					"/view/auth/loginProcess.jsp");
 			rd.forward(request, response);
 			
 		}else{
 			response.sendRedirect("login");
+			
 		}
 
 	}

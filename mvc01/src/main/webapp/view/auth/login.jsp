@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>로그인폼</title>
+<title>로그인폼(by MVC)</title>
 
 <script>
 
@@ -47,12 +47,12 @@
 </script>
 
 
-<link rel="stylesheet" href="/Mission-Web/css/layout.css" />
-<link rel="stylesheet" href="/Mission-Web/css/board.css" />
+<link rel="stylesheet" href="../css/layout.css" />
+<link rel="stylesheet" href="../css/board.css" />
 </head>
 <body>
 	<div id="header">
-		<jsp:include page="/jsp/include/topMenu.jsp" />
+		<jsp:include page="/view/include/topMenu.jsp" />
 	</div>
 	<div id="content" align="center">
 		<hr width="80%" />
@@ -80,7 +80,7 @@
 		</form>
 	</div>
 	<div id="bottom">
-		<%@ include file="/jsp/include/bottom.jsp" %>
+		<%@ include file="/view/include/bottom.jsp" %>
 	</div>
 
 </body>

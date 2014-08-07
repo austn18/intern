@@ -1,4 +1,4 @@
-package kr.co.kt.board.db;
+package kt.c.vo;
 
 public class BoardVO {
 	

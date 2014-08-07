@@ -1,4 +1,4 @@
-package kr.co.kt.util;
+package kt.c.util;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

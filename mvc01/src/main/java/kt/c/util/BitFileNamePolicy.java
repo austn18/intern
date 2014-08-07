@@ -1,4 +1,4 @@
-package kr.co.kt.util;
+package kt.c.util;
 
 import java.io.File;
 import java.util.UUID;

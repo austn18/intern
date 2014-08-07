@@ -4,7 +4,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<c:choose">
+<c:choose>
 	<c:when test="${userVO.type eq 'S' }">
 		<c:set var="message" value="관리자님 환영합니다." />
 	</c:when>
