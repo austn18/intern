@@ -2,13 +2,13 @@
 <%@page import="java.util.List"%>
 <%@page import="kr.co.kt.board.db.BoardDAO"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>�Խ��� ���(by MVC)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>게시판 목록(by MVC)</title>
 <link rel="stylesheet" href="/Mission-Web/css/layout.css" />
 <link rel="stylesheet" href="/Mission-Web/css/board.css" />
 <script>
@@ -22,7 +22,7 @@
 				location.href = "detail.jsp?type=list&no=" + boardNo;
 			</c:when>
 			<c:otherwise>
-				if(confirm("�α��� �� ��밡���մϴ�.\n�α��� �������� �̵��Ͻðڽ��ϱ�?"))
+				if(confirm("로그인 후 사용가능합니다.\n로그인 페이지로 이동하시겠습니까?"))
 					location.href = "/Mission-Web/jsp/login/login.jsp";
 			</c:otherwise>
 		</c:choose>
@@ -38,16 +38,16 @@
 	<div id="content">
 		<div align="center">
 			<hr width="80%" />
-			<h2>�Խ��� ���(by MVC)</h2>
+			<h2>게시판 목록(by MVC)</h2>
 			<hr width="80%" />
 			<br />
 
 			<table width="100%" class="list">
 				<tr>
-					<th width="7%">��ȣ</th>
-					<th>����</th>
-					<th width="16%">�۾���</th>
-					<th width="20%">�����</th>
+					<th width="7%">번호</th>
+					<th>제목</th>
+					<th width="16%">글쓴이</th>
+					<th width="20%">등록일</th>
 				</tr>
 
 				<c:forEach var="board" items="${ list }" varStatus="loop">
@@ -66,8 +66,8 @@
 
 			<br />
 			<c:if test="${not empty userVO}" >
-			<!-- <a href="writeForm.jsp">���۵��</a> -->
-			<input type="button" value="���۵��" onclick="goWriteForm()" />
+			<!-- <a href="writeForm.jsp">새글등록</a> -->
+			<input type="button" value="새글등록" onclick="goWriteForm()" />
 			</c:if>
 		</div>
 	</div>

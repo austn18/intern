@@ -1,6 +1,9 @@
 package kr.co.kt.login.db;
 
-public class LoginVO {
+import java.io.Serializable;
+
+public class LoginVO implements Serializable{
+	private static final long serialVersionUID = 1L;
 	
 	private String id;
 	private String password;

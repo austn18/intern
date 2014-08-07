@@ -1,3 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<strong>KT-DS 流公楷荐  4林瞒...</strong>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<strong>KT-DS 歆侂鞐办垬  4欤检皑...</strong>
