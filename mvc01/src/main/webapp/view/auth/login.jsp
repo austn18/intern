@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>로그인폼</title>
+<title>로그인폼(by MVC)</title>
 
 <script>
 
@@ -47,8 +47,8 @@
 </script>
 
 
-<link rel="stylesheet" href="/Mission-Web/css/layout.css" />
-<link rel="stylesheet" href="/Mission-Web/css/board.css" />
+<link rel="stylesheet" href="../css/layout.css" />
+<link rel="stylesheet" href="../css/board.css" />
 </head>
 <body>
 	<div id="header">

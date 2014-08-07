@@ -25,6 +25,7 @@ public class LoginDAO {
 		PreparedStatement pstmt = null;
 		try {
 			pstmt = con.prepareStatement(sql.toString());
+			
 			pstmt.setString(1, loginVO.getId());
 			pstmt.setString(2, loginVO.getPassword());
 			
@@ -35,7 +36,6 @@ public class LoginDAO {
 				userVO.setPassword(rs.getString("password"));
 				userVO.setType(rs.getString("type"));
 			}
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
