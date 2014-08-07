@@ -1,4 +1,4 @@
-package kr.co.kt.login.db;
+package kt.c.vo;
 
 import java.io.Serializable;
 
@@ -25,24 +25,27 @@ public class LoginVO implements Serializable{
 		return id;
 	}
 
-	public void setId(String id) {
+	public LoginVO setId(String id) {
 		this.id = id;
+		return this;
 	}
 
 	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(String password) {
+	public LoginVO setPassword(String password) {
 		this.password = password;
+		return this;
 	}
 
 	public String getType() {
 		return type;
 	}
 
-	public void setType(String type) {
+	public LoginVO setType(String type) {
 		this.type = type;
+		return this;
 	}
 
 	@Override

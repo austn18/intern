@@ -1,4 +1,4 @@
-package kr.co.kt.login.db;
+package kt.c.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 
 import kr.co.kt.util.ConnectionFactory;
 import kr.co.kt.util.JDBCClose;
+import kt.c.vo.LoginVO;
 
 public class LoginDAO {
 

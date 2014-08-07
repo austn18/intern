@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kt.c.dao.LoginDAO;
+import kt.c.vo.LoginVO;
+
 @WebServlet("/auth/login")
 public class LoginServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
@@ -25,7 +28,20 @@ public class LoginServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("LoginServlet.doPost()...");
-		
+
+		LoginVO userVO = new LoginDAO().login(new LoginVO()
+							.setId(request.getParameter("id"))
+							.setPassword(request.getParameter("password")));
+		if(userVO != null){
+			request.setAttribute("userVO", userVO);
+			RequestDispatcher rd = request.getRequestDispatcher(
+					"/view/auth/loginProcess.jsp");
+			rd.forward(request, response);
+			
+		}else{
+			response.sendRedirect("login");
+		}
+
 	}
 	
 	
