@@ -32,24 +32,3 @@ dependencies {
 	compile 'javax.servlet:jstl:1.2'
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
