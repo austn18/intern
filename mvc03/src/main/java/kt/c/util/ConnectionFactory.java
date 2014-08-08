@@ -24,7 +24,7 @@ public class ConnectionFactory {
 
 	public void returnConnection(Connection con){
 		try {
-			if(!con.isClosed() && con.isValid(1)){
+			if(!con.isClosed()){
 				conlist.add(con);
 			}
 		} catch (Exception e) {}

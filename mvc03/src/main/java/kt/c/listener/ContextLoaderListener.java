@@ -13,18 +13,23 @@ import kt.c.control.LoginController;
 import kt.c.control.LogoutController;
 import kt.c.dao.BoardDAO;
 import kt.c.dao.LoginDAO;
-
+import kt.c.util.ConnectionFactory;
 public class ContextLoaderListener implements ServletContextListener {
-
+	ConnectionFactory connectionFactory;
+	
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
 		System.out.println("ContextLoaderListener.contextInitialized()");
 		ServletContext ctx = sce.getServletContext();
 		ctx.setAttribute("contextRoot", ctx.getContextPath());
 		
+		connectionFactory = new ConnectionFactory();
+		
 		BoardDAO boardDAO = new BoardDAO();
+		boardDAO.setConnectionFactory(connectionFactory);
 		LoginDAO loginDAO = new LoginDAO();
-
+		loginDAO.setConnectionFactory(connectionFactory);
+		
 		ctx.setAttribute("/auth/login.do", new LoginController().setLoginDAO(loginDAO));
 		ctx.setAttribute("/auth/logout.do", new LogoutController());
 		ctx.setAttribute("/board/list.do", new BoardListController().setBoardDAO(boardDAO));
