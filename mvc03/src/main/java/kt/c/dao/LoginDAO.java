@@ -5,16 +5,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import kt.c.util.ConnectionFactory;
-import kt.c.util.JDBCClose;
 import kt.c.vo.LoginVO;
 
 public class LoginDAO {
+	ConnectionFactory connectionFactory;
+	
+	public void setConnectionFactory(ConnectionFactory connectionFactory) {
+		this.connectionFactory = connectionFactory;
+	}
 
-	public LoginVO login(LoginVO loginVO) {
-		
+	public LoginVO login(LoginVO loginVO) throws Exception{
+	
 		LoginVO userVO = null;
 		
-		Connection con = new ConnectionFactory().getConnection();
 		StringBuilder sql = new StringBuilder();
 		
 		sql.append("select id, password, type ");
@@ -22,24 +25,29 @@ public class LoginDAO {
 		sql.append(" where id = ? and ");
 		sql.append("       password = ? ");
 		
+		Connection con = null;
 		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 		try {
+			con = connectionFactory.getConnection();
 			pstmt = con.prepareStatement(sql.toString());
 			
 			pstmt.setString(1, loginVO.getId());
 			pstmt.setString(2, loginVO.getPassword());
 			
-			ResultSet rs = pstmt.executeQuery();
+			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				userVO = new LoginVO();
 				userVO.setId(rs.getString("id"));
 				userVO.setPassword(rs.getString("password"));
 				userVO.setType(rs.getString("type"));
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
+		}   catch (Exception e) {
+			throw e;
 		} finally {
-			JDBCClose.close(con, pstmt);
+			try{pstmt.close();}catch(Exception e){}
+			connectionFactory.returnConnection(con);
+			
 		}
 		
 		return userVO;
