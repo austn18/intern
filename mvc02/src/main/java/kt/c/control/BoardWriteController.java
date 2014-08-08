@@ -16,14 +16,14 @@ import kt.c.vo.LoginVO;
 import com.oreilly.servlet.MultipartRequest;
 
 @SuppressWarnings("serial")
-public class BoardWriteController extends HttpServlet implements Controller{
+public class BoardWriteController implements Controller{
 	@Override
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		if(request.getMethod().equals("GET")){
 			return "/view/board/writeForm.jsp";
 		}else{ // POST
-			String saveFolder = this.getServletContext().getRealPath("/upload"); 
+			String saveFolder = request.getServletContext().getRealPath("/upload"); 
 
 			MultipartRequest multi = new MultipartRequest(
 					request
