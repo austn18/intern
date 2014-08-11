@@ -6,8 +6,9 @@ import java.sql.ResultSet;
 
 import javax.sql.DataSource;
 
+import kt.c.annotation.Component;
 import kt.c.vo.LoginVO;
-
+@Component("loginDAO")
 public class LoginDAO {
 	DataSource dataSource;
 	

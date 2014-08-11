@@ -3,14 +3,14 @@ package kt.c.control;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kt.c.annotation.Component;
 import kt.c.dao.BoardDAO;
-
+@Component("/board/list.do")
 public class BoardListController implements Controller {
 	BoardDAO boardDAO;
 	
-	public Controller setBoardDAO(BoardDAO boardDAO) {
+	public void setBoardDAO(BoardDAO boardDAO) {
 		this.boardDAO = boardDAO;
-		return this;
 	}//Dependency injection
 
 	@Override 

@@ -1,8 +1,5 @@
 package kt.c.annotation.ex;
 
-import java.lang.annotation.Annotation;
-
-import kt.c.annotation.Component;
 
 public class Test02 {
 	public static void main(String[] args) {

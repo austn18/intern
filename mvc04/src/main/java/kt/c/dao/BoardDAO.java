@@ -8,9 +8,11 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import kt.c.annotation.Component;
 import kt.c.vo.BoardFileVO;
 import kt.c.vo.BoardVO;
 
+@Component("boardDAO")
 public class BoardDAO {
 	DataSource dataSource;
 	
@@ -38,8 +40,8 @@ public class BoardDAO {
 			try{pstmt.close();}catch(Exception e){}
 			try{rs.close();}catch(Exception e){}
 			
-			//DataSource·ÎºÎÅÍ ¾òÀº Ä¿³Ø¼Ç °´Ã¼´Â close()¸¦ È£ÃâÇÏ¸é
-			//DB¼­¹ö¿ÍÀÇ ¿¬°áÀ» ´Ý´Â °ÍÀÌ ¾Æ´Ï¶ó DataSource¿¡°Ô Ä¿³Ø¼ÇÀ» ¹Ý³³ÇÑ´Ù.
+			//DataSourceï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ä¿ï¿½Ø¼ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ close()ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï¸ï¿½
+			//DBï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ý´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ï¶ï¿½ DataSourceï¿½ï¿½ï¿½ï¿½ Ä¿ï¿½Ø¼ï¿½ï¿½ï¿½ ï¿½Ý³ï¿½ï¿½Ñ´ï¿½.
 			try{con.close();} catch(Exception e){}
 			
 		}

@@ -3,15 +3,15 @@ package kt.c.control;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kt.c.annotation.Component;
 import kt.c.dao.BoardDAO;
-
+@Component("/board/detail.do")
 public class BoardDetailController implements Controller {
 
 	BoardDAO boardDAO;
 	
-	public Controller setBoardDAO(BoardDAO boardDAO) {
+	public void setBoardDAO(BoardDAO boardDAO) {
 		this.boardDAO = boardDAO;
-		return this;
 	}
 	@Override
 	public String execute(HttpServletRequest request,

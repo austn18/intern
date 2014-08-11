@@ -4,7 +4,7 @@ apply plugin: 'war'
 
 
 compileJava {
-	options.encoding = 'MS949'
+	options.encoding = 'UTF-8'
 }
 
 
@@ -27,9 +27,10 @@ repositories {
 
 dependencies {
 	providedCompile 'javax.servlet:javax.servlet-api:3.0.1'
+	compile 'org.reflections:reflections:0.9.9-RC1'
 	compile name:'ojdbc14'
 	compile name:'cos'
-	compile 'javax.servlet:jstl:1.2'
+	compile 'javax.servlet:jstl:1.2' 
 }
 
 

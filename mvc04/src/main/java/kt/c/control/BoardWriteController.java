@@ -3,10 +3,10 @@ package kt.c.control;
 import java.io.File;
 import java.util.Enumeration;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kt.c.annotation.Component;
 import kt.c.dao.BoardDAO;
 import kt.c.util.BitFileNamePolicy;
 import kt.c.vo.BoardFileVO;
@@ -14,14 +14,12 @@ import kt.c.vo.BoardVO;
 import kt.c.vo.LoginVO;
 
 import com.oreilly.servlet.MultipartRequest;
-
-@SuppressWarnings("serial")
+@Component("/board/write.do")
 public class BoardWriteController implements Controller{
 	BoardDAO boardDAO;
 	
-	public Controller setBoardDAO(BoardDAO boardDAO) {
+	public void setBoardDAO(BoardDAO boardDAO) {
 		this.boardDAO = boardDAO;
-		return this;
 	}
 	@Override
 	public String execute(HttpServletRequest request,
@@ -33,14 +31,14 @@ public class BoardWriteController implements Controller{
 
 			MultipartRequest multi = new MultipartRequest(
 					request
-					, saveFolder			// ÀúÀåµÉ °æ·Î
-					, 1024 * 1024 * 3 		// ÆÄÀÏ¿¡ ¿Ã¸± ÃÖ´ëÅ©±â : 3MB
-					, "utf-8"				// ÀÎÄÚµù Å¸ÀÔ
+					, saveFolder			// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+					, 1024 * 1024 * 3 		// ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½Ã¸ï¿½ ï¿½Ö´ï¿½Å©ï¿½ï¿½ : 3MB
+					, "utf-8"				// ï¿½ï¿½ï¿½Úµï¿½ Å¸ï¿½ï¿½
 					, new BitFileNamePolicy()
 					);
 
-			// ÀÔ·ÂÇÑ Á¤º¸¸¦ DB¿¡ ÀúÀå
-			// 1. °Ô½Ã¹° ÀúÀå
+			// ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ DBï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			// 1. ï¿½Ô½Ã¹ï¿½ ï¿½ï¿½ï¿½ï¿½
 			String title = multi.getParameter("title");
 			LoginVO loginVO = (LoginVO)(request.getSession().getAttribute("userVO"));
 			String writer = loginVO.getId();
@@ -58,7 +56,7 @@ public class BoardWriteController implements Controller{
 
 			boardDAO.insert(board);
 
-			// 2. °Ô½Ã¹°ÀÇ Ã·ºÎÆÄÀÏ ÀúÀå
+			// 2. ï¿½Ô½Ã¹ï¿½ï¿½ï¿½ Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			Enumeration<?> files =  multi.getFileNames();
 
 			while(files.hasMoreElements()) {
