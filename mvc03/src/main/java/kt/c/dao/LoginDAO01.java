@@ -4,15 +4,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import javax.sql.DataSource;
-
+import kt.c.util.ConnectionFactory;
 import kt.c.vo.LoginVO;
 
-public class LoginDAO {
-	DataSource dataSource;
+public class LoginDAO01 {
+	ConnectionFactory connectionFactory;
 	
-	public void setDataSource(DataSource dataSource) {
-		this.dataSource = dataSource;
+	public void setConnectionFactory(ConnectionFactory connectionFactory) {
+		this.connectionFactory = connectionFactory;
 	}
 
 	public LoginVO login(LoginVO loginVO) throws Exception{
@@ -30,7 +29,7 @@ public class LoginDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
-			con = dataSource.getConnection();
+			con = connectionFactory.getConnection();
 			pstmt = con.prepareStatement(sql.toString());
 			
 			pstmt.setString(1, loginVO.getId());
@@ -47,7 +46,7 @@ public class LoginDAO {
 			throw e;
 		} finally {
 			try{pstmt.close();}catch(Exception e){}
-			try{con.close();} catch(Exception e){}
+			connectionFactory.returnConnection(con);
 			
 		}
 		
