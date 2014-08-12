@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	<bean id="engine1" class="ex02.Engine">
+		<property name="maker" value="기아차" />
+		<property name="horsePower" value="300" />
+	</bean>
+
+	<bean id="car1" class="ex02.Car">
+		<property name="engine">
+			<ref bean="engine1" />
+		</property>
+	</bean>
+
+	<bean id="car2" class="ex02.Car">
+		<property name="engine" ref="engine1" />
+	</bean>
+
+	<bean id="car3" class="ex02.Car">
+		<property name="engine">
+			<bean class="ex02.Engine">
+				<property name="maker" value="현대차" />
+				<property name="horsePower" value="350" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="car4" class="ex02.Car">
+		<property name="engine">
+			<bean class="ex02.Engine">
+				<property name="maker" value="GM" />
+				<property name="horsePower" value="550" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="engine2" class="ex02.Engine" scope="prototype">
+		<property name="maker" value="쉐보레" />
+		<property name="horsePower" value="800" />
+	</bean>
+	
+	<bean id="car5" class="ex02.Car">
+		<property name="engine" ref="engine2" />
+	</bean>
+	
+	<bean id="car6" class="ex02.Car">
+		<property name="engine" ref="engine2" />
+	</bean>
+
+</beans>

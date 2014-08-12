@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<bean id="car1" class="ex03.Car">
+		<property name="model" value="티코" />
+		<property name="cc" value="800" />
+		<property name="engine">
+			<bean class="ex03.Engine">
+				<property name="maker" value="기아" />
+				<property name="horsePower" value="200" />
+			</bean>
+		</property>
+		<property name="tires">
+			<array>
+				<value>한국타이어1</value>
+				<value>한국타이어2</value>
+				<value>한국타이어3</value>
+				<value>한국타이어4</value>
+			</array>
+		</property>
+	</bean>
+
+	<bean id="tire1" class="ex03.Tire" p:diameter="26inch"/>
+	<bean id="tire2" class="ex03.Tire" c:diameter="28inch"/>
+			
+	<bean id="car2" class="ex03.Car">
+		<property name="model" value="티코" />
+		<property name="cc" value="800" />
+		<property name="engine">
+			<bean class="ex03.Engine">
+				<property name="maker" value="기아" />
+				<property name="horsePower" value="200" />
+			</bean>
+		</property>
+		<property name="cdBox">
+			<list>
+				<value>한국타이어1</value>
+				<bean class="ex03.Engine">
+					<property name="maker" value="기아" />
+					<property name="horsePower" value="200" />
+				</bean>
+				<value type="java.lang.Integer">900</value>
+				<ref bean="tire1"/>
+				<ref bean="tire2"/>
+			</list>
+		</property>
+	</bean>
+
+</beans>

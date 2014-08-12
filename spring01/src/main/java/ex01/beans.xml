@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	
+	<bean id="car1" class="ex01.Car" />
+	
+	<bean id="car2" class="ex01.Car" >
+		<constructor-arg>
+			<value>티코</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>880</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="car3" class="ex01.Car" >
+		<constructor-arg value="소나타"/>
+		<constructor-arg value="1998" />
+	</bean>
+	
+	<bean id="car4" class="ex01.Car" >
+		<constructor-arg index="1" value="3000" />
+		<constructor-arg index="0" value="그랜져"/>
+	</bean>
+
+	<bean id="car5" class="ex01.Car" >
+		<property name="model">
+			<value>티코</value>
+		</property>
+		<property name="cc">
+			<value>880</value>
+		</property>
+	</bean>
+	
+	<bean id="car6" class="ex01.Car" >
+		<property name="model" value="티코"/>
+		<property name="cc" value="880"/>
+	</bean>
+</beans>
