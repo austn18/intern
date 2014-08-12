@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	
+	<bean id="car1" class="ex04.CarFactory" factory-method="createCar">
+		<constructor-arg value="tico"/>
+	</bean>
+	<bean id="car2" class="ex04.CarFactory" factory-method="createCar">
+		<constructor-arg value="sonata"/>
+	</bean>
+	<bean id="carFactory2" class="ex04.CarFactory2"/>
+	
+	<bean id="car3" factory-bean="carFactory2" factory-method="createCar">
+		<constructor-arg value="sonata"/>
+	</bean>
+	
+	<bean id="car4" class="ex04.CarFactoryBean">
+		<property name="model" value="tico"/>
+	</bean>
+</beans>

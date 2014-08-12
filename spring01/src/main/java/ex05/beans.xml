@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	
+
+	<context:component-scan base-package="ex05" />
+	<bean id="car1" class="ex05.Car"/>
+	<bean name="car2" class="ex05.Car"/>
+	<bean id="car3" name="car3-1 car3-2 car3-3" class="ex05.Car"/>
+	<bean name="car4 car4-2 car4-3" class="ex05.Car"/>
+</beans>

@@ -1,4 +1,4 @@
-package ex03;
+package ex04;
 
 import java.util.List;
 import java.util.Map;
@@ -8,41 +8,6 @@ public class Car {
 	int cc;
 	Engine engine;
 	String[] tires;
-	List<Object> cdBox;
-	Map<String, Object> options;
-	
-
-	public Map<String, Object> getOptions() {
-		return options;
-	}
-
-	public void setOptions(Map<String, Object> options) {
-		this.options = options;
-	}
-
-	public List<Object> getCdBox() {
-		return cdBox;
-	}
-
-	public void setCdBox(List<Object> cdBox) {
-		this.cdBox = cdBox;
-	}
-
-	public String[] getTires() {
-		return tires;
-	}
-
-	public void setTires(String[] tires) {
-		this.tires = tires;
-	}
-
-	public Car() {
-	}
-
-	public Car(String model, int cc) {
-		this.model = model;
-		this.cc = cc;
-	}
 
 	public String getModel() {
 		return model;
@@ -66,6 +31,14 @@ public class Car {
 
 	public void setEngine(Engine engine) {
 		this.engine = engine;
+	}
+
+	public String[] getTires() {
+		return tires;
+	}
+
+	public void setTires(String[] tires) {
+		this.tires = tires;
 	}
 
 	@Override
