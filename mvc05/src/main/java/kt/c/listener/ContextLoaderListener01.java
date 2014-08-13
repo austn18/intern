@@ -3,21 +3,20 @@ package kt.c.listener;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import javax.sql.DataSource;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class ContextLoaderListener implements ServletContextListener {
+public class ContextLoaderListener01 implements ServletContextListener {
 
 	// OracleDataSource dataSource;
 	ServletContext ctx;
-	DataSource dataSource;
 
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
 		ctx = sce.getServletContext();
 		ctx.setAttribute("contextRoot", ctx.getContextPath());
+		
 
 		try {
 			

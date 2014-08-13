@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,27 +13,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import kt.c.control.Controller;
+import kt.c.control.ControllerX;
 
 
 @SuppressWarnings("serial")
-@WebServlet("*.do")
+//@WebServlet("*.do")
 public class DispatcherServlet extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String servletPath = request.getServletPath();
 		response.setContentType("text/html; charset=UTF-8");
+
 		try {
-			ApplicationContext IoCContainer = 
-					(ApplicationContext)this.getServletContext().getAttribute("beanContainer");
-			Object obj = IoCContainer.getBean(servletPath);
+			ApplicationContext iocContainer = 
+					WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
+			Object obj = iocContainer.getBean(servletPath);
 			
-			if(obj == null || !(obj instanceof Controller)){
+			if(obj == null || !(obj instanceof ControllerX)){
 				throw new Exception("�䱸�ϴ��������� ����ϴ�.");
 			}
-			Controller pageController = (Controller)obj; 
+			ControllerX pageController = (ControllerX)obj; 
 			String viewUrl = pageController.execute(request, response);
 			
 			if(viewUrl.startsWith("redirect:")){

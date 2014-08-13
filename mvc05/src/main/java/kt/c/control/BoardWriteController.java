@@ -16,8 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.oreilly.servlet.MultipartRequest;
-@Component("/board/write.do")
-public class BoardWriteController implements Controller{
+//@Component("/board/write.do")
+public class BoardWriteController implements ControllerX{
 	@Autowired
 	BoardDAO boardDAO;
 

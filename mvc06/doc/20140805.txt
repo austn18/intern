@@ -1,0 +1,68 @@
+*Gradle 프로젝트 폴더 구조
+/src/main : 애플리케이션 소스 폴더
+/src/main/java : 자바 소스 폴더
+/src/main/resources : 애플리케이션에서 사용하는 참조 파일(xml, properties etc.)
+
+/src/test : 애플리케이션 단위 테스트 소스 폴더
+/src/test/java : 자바 단위 테스트 소스 파일
+/src/test/resources : 단위테스트할 때 사용할 참조 파일(xml, properties etc)
+
+* Gradle 설정 파일
+- build.gradle
+1) 설정 파일 스크립트 -> Groovy DSL
+2) 사용할 도구를 임포트
+apply plugin: '플러그인명'
+기본으로 임포트 해야할 플러그인: java, eclipse-wtp, war
+3) eclipse-wtp, war 기본 명령
+:eclipse => 모든 이클립스 설정파일 생성 (기존에 파일이 있으면 갱신한다)\
+:eclipseClasspath => .classpath 파일 생성/갱신
+:eclipseWtp => 이클립스 웹 플러그인을 위한 설정 파일 생성/갱신
+ (:eclipseWtpComponent, :eclipseWtpFacet, ...)
+
+
+4) java 기본 명령
+:compileJava => /src/main/java 폴더에 있는 자바 소스 파일을 컴파일한다.
+                /build/classes/main/ 폴더에 컴파일 파일을 둔다.
+:clean => /build 폴더 삭제
+:processResources => /src/main/resources 폴더에 있는 파일을 
+                    /build/resources/main 폴더로 복사한다.
+:compileTestJava => /src/test/java 폴더의 소스파일 컴파일.
+     => compileJava, processResources, class 를 포함한다.
+:processTestResouces => /src/test/resources 폴더파일 복사.
+:classes => 컴파일과 리소스 파일 복사 함께 수행. compileJava, processResources
+
+5) 컴파일 시 한글 주석에 대한 오류 해결
+:compileJava 태스크는 컴파일할 때 소스 파일의 인코딩이 JVM의 기본 인코딩으로 되었 있다고 간주한다.
+:compileJava 태스크의 인코딩 환경 정보를 변경해야 한다.
+태스크이름 {
+  프로퍼티명.프로퍼티명.프로퍼티명 = 값
+  메서드명 {
+    프로퍼티명.프로퍼티명 = 값
+ }
+}
+
+6) JRE, JDK, JavaSE, JavaEE 
+7) JavaEE와 구현서버의 관계
+8) repositories {}
+=> 의존 라이브러리를 제공하는 서버 설정
+9) dependencies {}
+=> 다운로드 받을 의존 라이브러리 지정
+=> compile group:'그룹명', name:'라이브러리명', version:'버전'
+=> compile '그룹명:라이브러리명:버전'      
+=> 라이브러리 정보 알아내는 방법: http://www.mvnrepository.com 에서 검색
+=> providedCompile : 컴파일 할 때만 사용. 배포할 때는 제외됨.
+   ex) servlet-api.jar 파일처럼 WAS에서 제공하는 라이브러리를 사용할 때.               
+                 
+
+
+
+
+
+
+
+
+
+
+
+
+

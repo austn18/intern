@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이파일은 WEB-INF 폴더로 옮김 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<!-- 
+		base-package 에 지정된 폴더를 스캔한다.
+		@Component, @service, @Controller, @Repository 애노테이션이 붙은 컴포넌트를
+		자동 생성하여 IoC 컨테이너에 보관한다.
+	 -->
+	<context:component-scan base-package="kt.c"></context:component-scan>
+
+	<!-- 스프링에서 DataSource 설정하기 -->
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:/comp/env/jdbc/xe" />
+	</bean>
+</beans>
