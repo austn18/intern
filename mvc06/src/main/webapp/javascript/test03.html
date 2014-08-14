@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+//내부함수 : clsure
+//*일반 변수 선언 : var 변수;
+//*파라미터 변수 : var 제거
+function createOp(op){
+	if(op == "plus"){
+		return function(a, b){ return a+b; };// 내부함수 클로져
+	}else {
+		return function(a, b){ return a-b; };
+	}
+}
+var plus = createOp("plus");
+console.log(plus(10, 20))
+var minus = createOp("minus");
+console.log(minus(10, 20))
+
+//클로저가 사용하는 바깥쪽의 변수는 별도로 복제해서 관리한다
+function outter(){
+	var x = 10;
+	return function(){ console.log(x) }
+}
+var k1 = outter(20);
+var k2 = outter(30);
+
+k1();
+k2();
+
+function computer(func){
+	func(10, 20);
+}
+
+computer(function(v1, v2){console.log(v1*v2);});
+computer(function(v1, v2){console.log(v1/v2);});
+
+</script>
+</body>
+</html>

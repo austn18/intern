@@ -46,7 +46,6 @@
 		<!-- <listener-class>kt.c.listener.ContextLoaderListener</listener-class> -->
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-
 	<listener>
 		<listener-class>kt.c.listener.AppInitListener</listener-class>
 	</listener>

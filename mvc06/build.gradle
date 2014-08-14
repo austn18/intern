@@ -26,6 +26,7 @@ repositories {
 }
 
 dependencies {
+	compile 'com.google.code.gson:gson:2.2.4'
     compile 'org.springframework:spring-webmvc:4.0.6.RELEASE'
 	providedCompile 'javax.servlet:javax.servlet-api:3.0.1'
 	compile 'org.reflections:reflections:0.9.9-RC1'

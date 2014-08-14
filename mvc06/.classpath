@@ -7,6 +7,11 @@
 	<classpathentry kind="src" path="src/test/resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER" exported="true"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container" exported="true"/>
+	<classpathentry sourcepath="C:/Documents and Settings/bitacademy/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a6dc5db8a12928e583bd3f23e72d3ab611ecd58f/gson-2.2.4-sources.jar" kind="lib" path="C:/Documents and Settings/bitacademy/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a60a5e993c98c864010053cb901b7eab25306568/gson-2.2.4.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
 	<classpathentry sourcepath="C:/Documents and Settings/bitacademy/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/4.0.6.RELEASE/8ed4a4be827c7ae796e8f855abf6190a596bb931/spring-webmvc-4.0.6.RELEASE-sources.jar" kind="lib" path="C:/Documents and Settings/bitacademy/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/4.0.6.RELEASE/9020a09a96058133c822ff04f00e7fa0e0c3b82b/spring-webmvc-4.0.6.RELEASE.jar" exported="true">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
@@ -17,12 +22,12 @@
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/lecture/mvc-workspace/mvc06/lib/ojdbc14.jar" exported="true">
+	<classpathentry kind="lib" path="C:/Documents and Settings/bitacademy/git/intern/mvc06/lib/ojdbc14.jar" exported="true">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/lecture/mvc-workspace/mvc06/lib/cos.jar" exported="true">
+	<classpathentry kind="lib" path="C:/Documents and Settings/bitacademy/git/intern/mvc06/lib/cos.jar" exported="true">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
 		</attributes>

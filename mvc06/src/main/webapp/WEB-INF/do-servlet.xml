@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:mvc="http://www.springframework.org/schema/mvc" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
         http://www.springframework.org/schema/context
@@ -17,11 +16,11 @@
 	<mvc:annotation-driven />
 	<!-- 멀티파트 폼 데이터를 처리할 객체를 활성화 -->
 	<bean id="multipartResolver"
-        class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 
-    <!-- one of the properties available; the maximum file size in bytes -->
-    <property name="maxUploadSize" value="500000"/>
+		<!-- one of the properties available; the maximum file size in bytes -->
+		<property name="maxUploadSize" value="500000" />
 
-</bean>
+	</bean>
 
 </beans>

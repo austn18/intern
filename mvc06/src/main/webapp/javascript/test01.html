@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+"use strict";
+//객체 만들기 : 자바 스크립트는 클래스가 없다. 프로토 타입 방식이다.
+//빈 객체 생성 => 필요한 변수와 함수를 더해서 사용한다.
+
+//방법 1
+//1) new : 빈 객체 생성
+//2) Object()호출 : 빈 객체에 필수 속성 및 함수 추가
+var obj1 = new Object();
+console.log(obj1.toStrion());
+
+obj1.title = "오호라...";
+obj1["content"] = "내용이군...";
+obj1["first name ^^"] = "헐...";
+//obj1.last name ^^ = "오류";
+// 결론! 자바스크립트의 객체는 Java Map 객체와 사용법이 유사하다
+
+//방법 2
+//단축 문법
+var obj2 = {};
+obj2.age = 20;
+obj2.tel = "111-2222";
+obj2.f1 = function(){console.log("단축문법...");};
+
+//방법 3
+//완전 단축문법 ==> 공식적으로 규약을 만든것 : JavaScript Object Notation(JSON)
+var obj3 = {
+		age:30, tel:"333-3333", f1: function(){console.log("완전 단축 문법...");};
+};
+
+console.log("obj1", obj1);
+
+console.log("obj2", obj2);
+
+console.log("obj3", obj3);
+</script>
+</body>
+</html>
